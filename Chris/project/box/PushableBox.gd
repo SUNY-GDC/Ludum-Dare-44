@@ -21,8 +21,11 @@ func _ready():
 func _physics_process(delta):
 	if !is_on_floor():
 		velocity.y += GRAVITY
+	else:
+		velocity.y = 0
 	velocity = move_and_slide(velocity, Vector2(0,-1))
 
 #pushes she box
+#add the players push speed
 func push(vecx):
 	velocity.x = vecx
