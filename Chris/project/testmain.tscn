@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://testplayer.tscn" type="PackedScene" id=1]
+[ext_resource path="res://box/PushableBox.tscn" type="PackedScene" id=2]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 346, 15 )
+
+[node name="test" type="Node2D"]
+
+[node name="testplayer" parent="." instance=ExtResource( 1 )]
+position = Vector2( 423, 302 )
+speed = 1500
+
+[node name="Box" parent="." instance=ExtResource( 2 )]
+position = Vector2( 651.481, 378.16 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2( 478, 452 )
+shape = SubResource( 1 )
+
