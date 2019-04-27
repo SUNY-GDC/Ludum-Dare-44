@@ -1,0 +1,2 @@
+Creation of the lever scene
+Creation of a scaling script to increase the size of the player when coins are collected
