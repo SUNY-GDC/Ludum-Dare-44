@@ -25,3 +25,9 @@ func _on_QuitButton_mouse_entered():
 
 func _on_QuitButton_mouse_exited():
 	$QuitButton/Label.rect_position = quit_pos
+
+func _on_PlayButton_mouse_entered():
+	$Player/AnimationPlayer.play("hover")
+
+func _on_PlayButton_pressed():
+	$Player/AnimationPlayer.play("stand")
