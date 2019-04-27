@@ -1,4 +1,4 @@
-extends Node
+extends Node2D
 
 var credits_pos = Vector2()
 var quit_pos = Vector2()
@@ -26,8 +26,12 @@ func _on_QuitButton_mouse_entered():
 func _on_QuitButton_mouse_exited():
 	$QuitButton/Label.rect_position = quit_pos
 
-func _on_PlayButton_mouse_entered():
-	$Player/AnimationPlayer.play("hover")
-
 func _on_PlayButton_pressed():
 	$Player/AnimationPlayer.play("stand")
+
+func _on_AnimationPlayer_animation_finished(anim_name):
+	if anim_name == "stand":
+		get_parent().get_node("SceneTransition/AnimationPlayer").play("scene_transition")
+		yield(get_tree().create_timer(2.5), "timeout")
+		self.hide()
+		get_parent().get_node("LevelTest").show()
