@@ -2,12 +2,12 @@
 
 importer="wav"
 type="AudioStreamSample"
-path="res://.import/Box Push SFX.wav-260f98b2db888bb28a0a727346f0d822.sample"
+path="res://.import/Box Push SFX.wav-6e2bf070bba619c7a43ec669563e85cc.sample"
 
 [deps]
 
-source_file="res://Box Push SFX.wav"
-dest_files=[ "res://.import/Box Push SFX.wav-260f98b2db888bb28a0a727346f0d822.sample" ]
+source_file="res://Assets/SFX/Box Push SFX.wav"
+dest_files=[ "res://.import/Box Push SFX.wav-6e2bf070bba619c7a43ec669563e85cc.sample" ]
 
 [params]
 
