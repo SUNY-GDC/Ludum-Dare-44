@@ -27,7 +27,11 @@ func _physics_process(delta):
 	velocity = move_and_slide(velocity, Vector2(0,-1))
 	velocity.x = lerp(velocity.x, 0 , 0.2)
 	if velocity.x <= 0.1 and velocity.x >= -0.1:
-		$AudioStreamPlayer.stop()
+		$AudioStreamPlayer.volume_db -= .5
+		if $AudioStreamPlayer.volume_db > -50:
+			yield(get_tree().create_timer(0.05),"timeout")
+		else:
+			$AudioStreamPlayer.stop()
 
 #pushes she box
 #add the players push speed
@@ -35,5 +39,6 @@ func push(vecx):
 	velocity.x = vecx
 	if $AudioStreamPlayer.playing != true:
 		$AudioStreamPlayer.play(playback)
+	$AudioStreamPlayer.volume_db = lerp($AudioStreamPlayer.volume_db, -18 , 1)
 
 	playback = $AudioStreamPlayer.get_playback_position()
