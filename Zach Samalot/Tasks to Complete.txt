@@ -1,0 +1,3 @@
+-player sprite (done)
+-player scene
+-coin scene
