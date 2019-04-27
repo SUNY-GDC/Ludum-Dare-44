@@ -8,6 +8,7 @@ extends KinematicBody2D
 #			if col.normal.y == 0:
 #				col.collider.push(sign(velocity.x) * 20)
 
+var playback = 0
 
 #this is the gravity
 var GRAVITY  = 10
@@ -25,8 +26,14 @@ func _physics_process(delta):
 		velocity.y = 0
 	velocity = move_and_slide(velocity, Vector2(0,-1))
 	velocity.x = lerp(velocity.x, 0 , 0.2)
+	if velocity.x <= 0.1 and velocity.x >= -0.1:
+		$AudioStreamPlayer.stop()
 
 #pushes she box
 #add the players push speed
 func push(vecx):
 	velocity.x = vecx
+	if $AudioStreamPlayer.playing != true:
+		$AudioStreamPlayer.play(playback)
+
+	playback = $AudioStreamPlayer.get_playback_position()

@@ -28,8 +28,6 @@ func _physics_process(delta):
 		if col.collider.has_method("push"):
 			if col.normal.y == 0:
 				col.collider.push(sign(velocity.x) * 75)
-	
-			
 				
 	velocity = move_and_slide(velocity, Vector2(0, -1))
 
