@@ -24,6 +24,7 @@ func _physics_process(delta):
 	else:
 		velocity.y = 0
 	velocity = move_and_slide(velocity, Vector2(0,-1))
+	velocity.x = lerp(velocity.x, 0 , 0.2)
 
 #pushes she box
 #add the players push speed
