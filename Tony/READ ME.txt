@@ -1,0 +1,5 @@
+To play the Scene Transition Animation you need to use
+$SceneTransition/AnimationPlayer.play("scene_transition")
+
+You also need to instance the SceneTransition node in the
+main scene or HUD
