@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://TitleScreen.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Kenney Thick.ttf" type="DynamicFontData" id=2]
@@ -8,6 +8,7 @@
 [ext_resource path="res://Assets/bag.png" type="Texture" id=6]
 [ext_resource path="res://Assets/foot.png" type="Texture" id=7]
 [ext_resource path="res://Assets/face.png" type="Texture" id=8]
+[ext_resource path="res://Box Push SFX.wav" type="AudioStream" id=9]
 
 [sub_resource type="DynamicFont" id=1]
 size = 50
@@ -164,6 +165,7 @@ text = "Title Text"
 uppercase = true
 
 [node name="Throne" type="Node2D" parent="."]
+editor/display_folded = true
 
 [node name="Backplate" type="Sprite" parent="Throne"]
 position = Vector2( 338.304, 199.161 )
@@ -446,6 +448,7 @@ margin_right = 543.0
 margin_bottom = 570.0
 
 [node name="Body" type="Sprite" parent="Player"]
+editor/display_folded = true
 position = Vector2( 450.544, 464.584 )
 texture = ExtResource( 6 )
 __meta__ = {
@@ -463,6 +466,9 @@ texture = ExtResource( 7 )
 [node name="Face" type="Sprite" parent="Player/Body"]
 position = Vector2( -7.07068, -2.68188 )
 texture = ExtResource( 8 )
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 9 )
 
 [connection signal="mouse_entered" from="CreditsButton" to="." method="_on_CreditsButton_mouse_entered"]
 [connection signal="mouse_exited" from="CreditsButton" to="." method="_on_CreditsButton_mouse_exited"]

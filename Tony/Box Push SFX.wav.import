@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Box Push SFX.wav-260f98b2db888bb28a0a727346f0d822.sample"
+
+[deps]
+
+source_file="res://Box Push SFX.wav"
+dest_files=[ "res://.import/Box Push SFX.wav-260f98b2db888bb28a0a727346f0d822.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=true
+compress/mode=0
