@@ -1,13 +1,10 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://box/PushableBox.gd" type="Script" id=1]
 [ext_resource path="res://icon.png" type="Texture" id=2]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 31.7962, 31.4114 )
-
-[sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 10, 31.9176 )
 
 [node name="Box" type="KinematicBody2D"]
 script = ExtResource( 1 )
@@ -18,17 +15,3 @@ texture = ExtResource( 2 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource( 1 )
 
-[node name="left" type="Area2D" parent="."]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="left"]
-position = Vector2( -27.933, 0.263519 )
-shape = SubResource( 2 )
-
-[node name="right" type="Area2D" parent="."]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="right"]
-position = Vector2( 27.406, 0.263519 )
-shape = SubResource( 2 )
-
-[connection signal="body_entered" from="left" to="." method="_on_left_body_entered"]
-[connection signal="body_entered" from="right" to="." method="_on_right_body_entered"]

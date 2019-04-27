@@ -2,6 +2,7 @@ extends KinematicBody2D
 
 var velocity = Vector2(0,0)
 export (int) var speed = 150
+var push_speed = 100
 
 
 func _ready():
@@ -23,6 +24,15 @@ func _process(delta):
 	velocity * speed
 
 func _physics_process(delta):
+	
+	#this must be in player
+	for idx in range(get_slide_count()):
+		var col = get_slide_collision(idx)
+		print(col.collider)
+		if col.collider.has_method("push"):
+			if col.normal.y == 0:
+				col.collider.push(sign(velocity.x) * 20)
+
 	velocity = move_and_slide(velocity,Vector2(0,-1))
 
 func _on_left_body_entered(body):

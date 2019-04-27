@@ -1,7 +1,15 @@
 extends KinematicBody2D
 
-#for code to work the player must be in group player 
+#this code must be in player
+#	for idx in range(get_slide_count()):
+#		var col = get_slide_collision(idx)
+#		print(col.collider)
+#		if col.collider.has_method("push"):
+#			if col.normal.y == 0:
+#				col.collider.push(sign(velocity.x) * 20)
 
+
+#this is the gravity
 var GRAVITY  = 10
 
 var velocity = Vector2(0,0) #used to calculate movment
@@ -11,16 +19,10 @@ func _ready():
 	pass 
 	
 func _physics_process(delta):
-	velocity.y += GRAVITY
-	velocity = move_and_slide(velocity)
+	if !is_on_floor():
+		velocity.y += GRAVITY
+	velocity = move_and_slide(velocity, Vector2(0,-1))
 
-
-#slide the player if in the area
-func _on_left_body_entered(body):
-	if body.is_in_group("player"):
-		velocity.x = speed
-
-#slide the player if in the area
-func _on_right_body_entered(body):
-	if body.is_in_group("player"):
-		velocity.x = -speed
+#pushes she box
+func push(vecx):
+	velocity.x = vecx
