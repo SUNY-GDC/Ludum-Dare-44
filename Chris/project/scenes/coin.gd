@@ -35,6 +35,7 @@ func setup(mpos,pos, rot = 0):
 func _on_collision_timer_timeout():
 	#makes the coin collectable
 	collectable = true
+	remove_collision_exception_with(get_parent().get_node("player"))
 
 
 func _on_despawn_timer_timeout():
