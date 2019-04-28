@@ -9,7 +9,7 @@ extents = Vector2( 346, 15 )
 [node name="test" type="Node2D"]
 
 [node name="Box" parent="." instance=ExtResource( 1 )]
-position = Vector2( 651.481, 378.16 )
+position = Vector2( 637.201, 297.239 )
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 

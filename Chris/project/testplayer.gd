@@ -31,7 +31,7 @@ func _physics_process(delta):
 		print(col.collider)
 		if col.collider.has_method("push"):
 			if col.normal.y == 0:
-				col.collider.push(sign(velocity.x) * 20)
+				col.collider.push(sign(velocity.x) * 70)
 
 	velocity = move_and_slide(velocity,Vector2(0,-1))
 
