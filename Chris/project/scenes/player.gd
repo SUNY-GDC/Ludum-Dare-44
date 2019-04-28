@@ -22,14 +22,16 @@ func _ready():
 	
 
 func _physics_process(delta):
-	
+	#box colision
 	for idx in range(get_slide_count()):
 		var col = get_slide_collision(idx)
 		if col.collider.has_method("push"):
 			if col.normal.y == 0:
 				col.collider.push(-col.normal.x * 75)
-
-	velocity.y += gravity * delta
+		print(col.collider)
+		
+	if !is_on_floor():
+		velocity.y += gravity * delta
 	velocity = move_and_slide(velocity, Vector2(0, -1))
 
 func _process(delta):

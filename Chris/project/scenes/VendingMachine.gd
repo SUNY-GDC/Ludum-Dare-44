@@ -1,6 +1,6 @@
 extends Area2D
 
-export (PackedScene) var key
+export (PackedScene) var object
 export (int, "Body", "Slot") var collision_type #This will tell the game what type of coin collision will spawn a key
 
 func _ready():
@@ -17,7 +17,7 @@ func vending_machine_hit(body):
 
 #This function spawns in a key
 func spawn_key():
-	var k = key.instance()
+	var k = object.instance()
 	add_child(k)
 	k.position = $KeySpawn.position
 

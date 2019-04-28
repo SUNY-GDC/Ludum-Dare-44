@@ -30,5 +30,4 @@ shape = SubResource( 2 )
 [node name="KeySpawn" type="Position2D" parent="."]
 position = Vector2( 0, 30.5683 )
 
-[connection signal="body_entered" from="." to="." method="_on_VendingMachine_body_entered"]
 [connection signal="body_entered" from="CoinSlot" to="." method="_on_CoinSlot_body_entered"]
