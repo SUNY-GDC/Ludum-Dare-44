@@ -79,7 +79,8 @@ func get_input():
 		if coin_count > 0:
 			var c = coin.instance()
 			c.setup(mousepos, position, $RayCast2D.rotation)
-			remove_collision_exception_with(self)
+			velocity -= c.linear_velocity / 3
+			c.add_collision_exception_with(self)
 			get_parent().add_child(c)
 			scale_tween()
 			coin_count -= 1
