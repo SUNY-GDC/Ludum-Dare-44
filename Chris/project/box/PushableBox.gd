@@ -3,10 +3,11 @@ extends KinematicBody2D
 #this code must be in player
 #	for idx in range(get_slide_count()):
 #		var col = get_slide_collision(idx)
-#		print(col.collider)
 #		if col.collider.has_method("push"):
 #			if col.normal.y == 0:
-#				col.collider.push(sign(velocity.x) * 20)
+#				col.collider.push(-col.normal.x * 75)
+#
+
 
 var playback = 0
 

@@ -22,14 +22,16 @@ func _ready():
 	
 
 func _physics_process(delta):
-	velocity.y += gravity * delta
-	print(sign(velocity.x))
+	#box colision
 	for idx in range(get_slide_count()):
 		var col = get_slide_collision(idx)
 		if col.collider.has_method("push"):
 			if col.normal.y == 0:
 				col.collider.push(-col.normal.x * 75)
-				
+		print(col.collider)
+		
+	if !is_on_floor():
+		velocity.y += gravity * delta
 	velocity = move_and_slide(velocity, Vector2(0, -1))
 
 func _process(delta):
@@ -86,7 +88,8 @@ func get_input():
 		if coin_count > 0:
 			var c = coin.instance()
 			c.setup(mousepos, position, $RayCast2D.rotation)
-			remove_collision_exception_with(self)
+			velocity -= c.linear_velocity / 3
+			c.add_collision_exception_with(self)
 			get_parent().add_child(c)
 			scale_tween()
 			coin_count -= 1

@@ -1,4 +1,4 @@
-The cell size is 100x100.
-These are basic tiles to help get simple level design done.
-A more detailed and updated tileset will be made today.
-If you have any tiles you want added just dm me over discord @WayOfOld.
+The cell size is 64x64
+There are two different sets of tilesets. One for a metal theme and another for grass because why not.
+I can and want to add more but for now this should be enough to get basic level concept and design down.
+Not all the ramp are seamless.
