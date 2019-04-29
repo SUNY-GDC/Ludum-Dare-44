@@ -8,6 +8,7 @@ emission_box_extents = Vector3( 540, 100, 540 )
 flag_disable_z = true
 gravity = Vector3( 0, 75, 0 )
 initial_velocity = 1.0
+angular_velocity = 1.0
 orbit_velocity = 0.0
 orbit_velocity_random = 0.0
 scale = 0.3
@@ -288,7 +289,7 @@ lifetime = 5.5
 one_shot = true
 speed_scale = 2.5
 explosiveness = 0.35
-visibility_rect = Rect2( -100, 300, 200, 200 )
+visibility_rect = Rect2( -400, 200, 800, 800 )
 process_material = SubResource( 1 )
 texture = ExtResource( 1 )
 
