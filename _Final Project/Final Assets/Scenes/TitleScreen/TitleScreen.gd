@@ -33,7 +33,7 @@ func _on_PlayButton_pressed():
 
 func _on_AnimationPlayer_animation_finished(anim_name):
 	if anim_name == "stand":
-		get_parent().transition_scene("Level")
+		get_parent().transition_scene("Level2")
 		yield(get_tree().create_timer(2.5), "timeout")
 		self.hide()
 		#get_parent().get_node("LevelTest").show()

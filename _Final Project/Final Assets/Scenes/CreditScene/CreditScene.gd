@@ -4,7 +4,7 @@ var num_of_people = 7
 var people = ["Tony", "Raea", "ZacharyLawrence", "Chris", "Dylan", "ZachSamalot", "Paul"]
 var current_person
 
-func _ready():
+func start():
 	$CoinParticles.emitting = true
 	$CoinParticles2.emitting = true
 	$BagBoy.hide()
