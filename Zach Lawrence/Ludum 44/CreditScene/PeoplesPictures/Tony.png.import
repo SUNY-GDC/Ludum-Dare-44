@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/ZacharyLawrence.png-768a01097b4dfd60ed0491178730508f.stex"
+path="res://.import/Tony.png-0d764bc7d901f5e33fe3634e2111c16a.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://PeoplesPictures/ZacharyLawrence.png"
-dest_files=[ "res://.import/ZacharyLawrence.png-768a01097b4dfd60ed0491178730508f.stex" ]
+source_file="res://CreditScene/PeoplesPictures/Tony.png"
+dest_files=[ "res://.import/Tony.png-0d764bc7d901f5e33fe3634e2111c16a.stex" ]
 
 [params]
 

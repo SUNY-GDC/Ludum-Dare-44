@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Tony.png-31d2cdaf5cea756a868e749925d0d146.stex"
+path="res://.import/Raea.png-ddbefe45a0cada977700b2e066fa641f.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://PeoplesPictures/Tony.png"
-dest_files=[ "res://.import/Tony.png-31d2cdaf5cea756a868e749925d0d146.stex" ]
+source_file="res://CreditScene/PeoplesPictures/Raea.png"
+dest_files=[ "res://.import/Raea.png-ddbefe45a0cada977700b2e066fa641f.stex" ]
 
 [params]
 
