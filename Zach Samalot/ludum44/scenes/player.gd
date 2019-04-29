@@ -14,6 +14,8 @@ var velocity = Vector2()
 
 var coin_count
 
+signal dead
+
 func _ready():
 	state = IDLE
 	facing = RIGHT
@@ -22,8 +24,20 @@ func _ready():
 	
 
 func _physics_process(delta):
-	velocity.y += gravity * delta
+	#box colision
+	for idx in range(get_slide_count()):
+		var col = get_slide_collision(idx)
+		if col.collider.has_method("push"):
+			if col.normal.y == 0:
+				col.collider.push(-col.normal.x * 75)
+		print(col.collider)
+		
+	if !is_on_floor():
+		velocity.y += gravity * delta
 	velocity = move_and_slide(velocity, Vector2(0, -1))
+	
+	if position.y > 2000:
+		state = DEAD
 
 func _process(delta):
 	mousepos = get_global_mouse_position()
@@ -37,6 +51,9 @@ func _process(delta):
 
 func get_input():
 # Gets player input for movement
+	
+	if state == DEAD:
+		emit_signal("dead")
 	
 	# Remove player horizontal velocity
 	if state != JUMP:
@@ -112,3 +129,8 @@ func _state_change(_state, _facing):
 			$AnimationPlayer.play("walk_" + str(dir))
 	
 	
+
+func _on_Tween_tween_completed(object, key):
+	if coin_count == 0:
+		$Particles2D.emitting = true
+		state = DEAD

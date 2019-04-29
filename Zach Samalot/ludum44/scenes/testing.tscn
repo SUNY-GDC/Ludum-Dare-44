@@ -9,7 +9,7 @@ extents = Vector2( 335, 27 )
 [node name="testing" type="Node"]
 
 [node name="player" parent="." instance=ExtResource( 1 )]
-position = Vector2( 491, 226.632 )
+position = Vector2( 446.873, 203.231 )
 collision/safe_margin = 1.0
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
