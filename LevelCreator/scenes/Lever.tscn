@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://scenes/Lever.gd" type="Script" id=1]
+[ext_resource path="res://scenes/lever_active.png" type="Texture" id=2]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 69.2781, 9.90085 )
+
+[node name="Lever" type="Area2D"]
+position = Vector2( 463.309, 285.601 )
+script = ExtResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 0, -19.0262 )
+texture = ExtResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 0, -0.250351 )
+shape = SubResource( 1 )
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+
+[connection signal="body_entered" from="." to="." method="_on_Lever_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_Lever_body_exited"]
