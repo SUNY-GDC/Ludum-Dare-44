@@ -1,0 +1,476 @@
+[gd_scene load_steps=13 format=2]
+
+[ext_resource path="res://Final Assets/Scenes/TitleScreen/TitleScreen.gd" type="Script" id=1]
+[ext_resource path="res://Final Assets/Fonts/Kenney Thick.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://Final Assets/Graphics/coin.png" type="Texture" id=3]
+[ext_resource path="res://Final Assets/Graphics/BagPile.png" type="Texture" id=4]
+[ext_resource path="res://Final Assets/Graphics/BagPile2.png" type="Texture" id=5]
+[ext_resource path="res://Final Assets/Graphics/bag.png" type="Texture" id=6]
+[ext_resource path="res://Final Assets/Graphics/foot.png" type="Texture" id=7]
+[ext_resource path="res://Final Assets/Graphics/face.png" type="Texture" id=8]
+
+[sub_resource type="DynamicFont" id=1]
+size = 40
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 25
+outline_size = 2
+font_data = ExtResource( 2 )
+
+[sub_resource type="Animation" id=3]
+resource_name = "hover"
+length = 5.0
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Body/LeftFoot:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5, 1.2, 1.7, 3 ),
+"transitions": PoolRealArray( 1, 0.406126, 1, 1.41421, 1 ),
+"update": 0,
+"values": [ Vector2( -30.0707, 76.3181 ), Vector2( -36.7933, 97.9267 ), Vector2( -25.4082, 91.0434 ), Vector2( -30.0707, 76.3181 ), Vector2( -30.0707, 76.3181 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Body/RightFoot:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.5, 1.2, 1.7, 3 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 27.9293, 76.3181 ), Vector2( 24.568, 99.7274 ), Vector2( 39.9741, 86.9724 ), Vector2( 27.9293, 76.3181 ), Vector2( 27.9293, 76.3181 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Body/Face:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( -7.07068, -2.68188 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Body:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 450.544, 464.584 ) ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("Body/RightFoot:show_behind_parent")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+
+[sub_resource type="Animation" id=4]
+resource_name = "stand"
+length = 5.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("Body/LeftFoot:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2, 3.2, 3.4, 3.6, 3.8, 4, 4.2, 4.4, 4.6 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( -30.0707, 76.3181 ), Vector2( -75.9062, 78.0721 ), Vector2( -75.9062, 78.0721 ), Vector2( -23.5227, 78.0721 ), Vector2( -75.9062, 78.0721 ), Vector2( -23.5227, 78.0721 ), Vector2( -75.9062, 78.0721 ), Vector2( -23.5227, 78.0721 ), Vector2( -75.9062, 78.0721 ), Vector2( -23.5227, 78.0721 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Body/RightFoot:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.2, 3.2, 3.4, 3.6, 3.8, 4, 4.2, 4.4, 4.6 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 27.9293, 76.3181 ), Vector2( 73.7649, 74.5642 ), Vector2( 73.7649, 74.5642 ), Vector2( 54.559, 76.1471 ), Vector2( 73.7649, 74.5642 ), Vector2( 54.559, 76.1471 ), Vector2( 73.7649, 74.5642 ), Vector2( 54.559, 76.1471 ), Vector2( 73.7649, 74.5642 ), Vector2( 54.559, 76.1471 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Body:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.2, 3, 3.2, 3.5, 4.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 450.544, 464.584 ), Vector2( 450.544, 429.506 ), Vector2( 450.544, 429.506 ), Vector2( 468.551, 401.443 ), Vector2( 527.483, 725.917 ), Vector2( 1476.93, 739.948 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Body/Face:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 0.9, 1.1, 1.3, 1.5, 1.7, 1.9, 2.1, 2.3, 2.5, 2.7, 2.8, 2.9, 3.4 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( -7.07068, -2.68188 ), Vector2( -3.79675, -20.221 ), Vector2( -5.43381, 28.8885 ), Vector2( -5.43381, 28.8885 ), Vector2( 10.936, 0.825867 ), Vector2( 10.936, 0.825867 ), Vector2( -16.8927, 0.825867 ), Vector2( -16.8927, 0.825867 ), Vector2( -5.43381, 6.08759 ), Vector2( -5.43381, 6.08759 ), Vector2( -7.07068, -2.68188 ), Vector2( -5.43381, 16.6112 ), Vector2( -7.07068, -2.68188 ), Vector2( 37.1278, -0.927979 ) ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("Body/RightFoot:show_behind_parent")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0, 3.1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ false, true ]
+}
+
+[node name="TitleScreen" type="Node2D"]
+script = ExtResource( 1 )
+
+[node name="TitleLabel" type="Label" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = 488.218
+margin_top = 50.8841
+margin_right = 1126.22
+margin_bottom = 107.885
+custom_fonts/font = SubResource( 1 )
+text = "Super Coin Boy"
+uppercase = true
+
+[node name="Throne" type="Node2D" parent="."]
+editor/display_folded = true
+
+[node name="Backplate" type="Sprite" parent="Throne"]
+position = Vector2( 338.304, 199.161 )
+scale = Vector2( 1.77164, 1.81462 )
+texture = ExtResource( 3 )
+
+[node name="LeftArm" type="Node2D" parent="Throne"]
+editor/display_folded = true
+
+[node name="LeftArm1" type="Sprite" parent="Throne/LeftArm"]
+position = Vector2( 178.735, 493.516 )
+scale = Vector2( 1, 0.317246 )
+texture = ExtResource( 3 )
+
+[node name="LeftArm2" type="Sprite" parent="Throne/LeftArm"]
+position = Vector2( 178.735, 478.815 )
+scale = Vector2( 1, 0.317246 )
+texture = ExtResource( 3 )
+
+[node name="LeftArm3" type="Sprite" parent="Throne/LeftArm"]
+position = Vector2( 178.735, 464.848 )
+scale = Vector2( 1, 0.317246 )
+texture = ExtResource( 3 )
+
+[node name="LeftArm4" type="Sprite" parent="Throne/LeftArm"]
+position = Vector2( 178.735, 451.616 )
+scale = Vector2( 1, 0.317246 )
+texture = ExtResource( 3 )
+
+[node name="LeftArm5" type="Sprite" parent="Throne/LeftArm"]
+position = Vector2( 178.735, 439.12 )
+scale = Vector2( 1, 0.317246 )
+texture = ExtResource( 3 )
+
+[node name="LeftArm6" type="Sprite" parent="Throne/LeftArm"]
+position = Vector2( 178.735, 424.418 )
+scale = Vector2( 1, 0.317246 )
+texture = ExtResource( 3 )
+
+[node name="LeftArm7" type="Sprite" parent="Throne/LeftArm"]
+position = Vector2( 178.735, 410.451 )
+scale = Vector2( 1, 0.317246 )
+texture = ExtResource( 3 )
+
+[node name="LeftArm8" type="Sprite" parent="Throne/LeftArm"]
+position = Vector2( 178.735, 397.219 )
+scale = Vector2( 1, 0.317246 )
+texture = ExtResource( 3 )
+
+[node name="LeftArm9" type="Sprite" parent="Throne/LeftArm"]
+position = Vector2( 178.735, 385.458 )
+scale = Vector2( 1, 0.317246 )
+texture = ExtResource( 3 )
+
+[node name="LeftArm10" type="Sprite" parent="Throne/LeftArm"]
+position = Vector2( 178.735, 377.372 )
+scale = Vector2( 1, 0.317246 )
+texture = ExtResource( 3 )
+
+[node name="LeftArm11" type="Sprite" parent="Throne/LeftArm"]
+position = Vector2( 178, 364.448 )
+scale = Vector2( 1, 0.317246 )
+texture = ExtResource( 3 )
+
+[node name="LeftArm12" type="Sprite" parent="Throne/LeftArm"]
+position = Vector2( 178, 350.767 )
+scale = Vector2( 1, 0.317246 )
+texture = ExtResource( 3 )
+
+[node name="LeftArm13" type="Sprite" parent="Throne/LeftArm"]
+position = Vector2( 178, 335.857 )
+scale = Vector2( 1, 0.317246 )
+texture = ExtResource( 3 )
+
+[node name="LeftArm14" type="Sprite" parent="Throne/LeftArm"]
+position = Vector2( 178, 322.626 )
+scale = Vector2( 1, 0.317246 )
+texture = ExtResource( 3 )
+
+[node name="LeftArm15" type="Sprite" parent="Throne/LeftArm"]
+position = Vector2( 178, 307.189 )
+scale = Vector2( 1, 0.317246 )
+texture = ExtResource( 3 )
+
+[node name="RightArm" type="Node2D" parent="Throne"]
+editor/display_folded = true
+
+[node name="RightArm1" type="Sprite" parent="Throne/RightArm"]
+position = Vector2( 498.245, 493.516 )
+scale = Vector2( 1, 0.317246 )
+texture = ExtResource( 3 )
+
+[node name="RightArm2" type="Sprite" parent="Throne/RightArm"]
+position = Vector2( 498.245, 478.815 )
+scale = Vector2( 1, 0.317246 )
+texture = ExtResource( 3 )
+
+[node name="RightArm3" type="Sprite" parent="Throne/RightArm"]
+position = Vector2( 498.245, 464.848 )
+scale = Vector2( 1, 0.317246 )
+texture = ExtResource( 3 )
+
+[node name="RightArm4" type="Sprite" parent="Throne/RightArm"]
+position = Vector2( 498.245, 451.616 )
+scale = Vector2( 1, 0.317246 )
+texture = ExtResource( 3 )
+
+[node name="RightArm5" type="Sprite" parent="Throne/RightArm"]
+position = Vector2( 498.245, 439.12 )
+scale = Vector2( 1, 0.317246 )
+texture = ExtResource( 3 )
+
+[node name="RightArm6" type="Sprite" parent="Throne/RightArm"]
+position = Vector2( 498.245, 424.418 )
+scale = Vector2( 1, 0.317246 )
+texture = ExtResource( 3 )
+
+[node name="RightArm7" type="Sprite" parent="Throne/RightArm"]
+position = Vector2( 498.245, 410.451 )
+scale = Vector2( 1, 0.317246 )
+texture = ExtResource( 3 )
+
+[node name="RightArm8" type="Sprite" parent="Throne/RightArm"]
+position = Vector2( 498.245, 397.219 )
+scale = Vector2( 1, 0.317246 )
+texture = ExtResource( 3 )
+
+[node name="RightArm9" type="Sprite" parent="Throne/RightArm"]
+position = Vector2( 498.245, 385.458 )
+scale = Vector2( 1, 0.317246 )
+texture = ExtResource( 3 )
+
+[node name="RightArm10" type="Sprite" parent="Throne/RightArm"]
+position = Vector2( 498.245, 377.372 )
+scale = Vector2( 1, 0.317246 )
+texture = ExtResource( 3 )
+
+[node name="RightArm11" type="Sprite" parent="Throne/RightArm"]
+position = Vector2( 498.245, 365.61 )
+scale = Vector2( 1, 0.317246 )
+texture = ExtResource( 3 )
+
+[node name="RightArm12" type="Sprite" parent="Throne/RightArm"]
+position = Vector2( 498.245, 352.379 )
+scale = Vector2( 1, 0.317246 )
+texture = ExtResource( 3 )
+
+[node name="RightArm13" type="Sprite" parent="Throne/RightArm"]
+position = Vector2( 498.245, 337.677 )
+scale = Vector2( 1, 0.317246 )
+texture = ExtResource( 3 )
+
+[node name="RightArm14" type="Sprite" parent="Throne/RightArm"]
+position = Vector2( 498.245, 323.71 )
+scale = Vector2( 1, 0.317246 )
+texture = ExtResource( 3 )
+
+[node name="RightArm15" type="Sprite" parent="Throne/RightArm"]
+position = Vector2( 498.245, 309.008 )
+scale = Vector2( 1, 0.317246 )
+texture = ExtResource( 3 )
+
+[node name="Middle" type="Node2D" parent="Throne"]
+editor/display_folded = true
+
+[node name="Middle1" type="Sprite" parent="Throne/Middle"]
+position = Vector2( 338.73, 493.516 )
+scale = Vector2( 1, 0.317246 )
+texture = ExtResource( 3 )
+
+[node name="Middle2" type="Sprite" parent="Throne/Middle"]
+position = Vector2( 338.73, 478.815 )
+scale = Vector2( 1, 0.317246 )
+texture = ExtResource( 3 )
+
+[node name="Middle3" type="Sprite" parent="Throne/Middle"]
+position = Vector2( 338.73, 464.848 )
+scale = Vector2( 1, 0.317246 )
+texture = ExtResource( 3 )
+
+[node name="Middle4" type="Sprite" parent="Throne/Middle"]
+position = Vector2( 338.73, 451.616 )
+scale = Vector2( 1, 0.317246 )
+texture = ExtResource( 3 )
+
+[node name="Middle5" type="Sprite" parent="Throne/Middle"]
+position = Vector2( 338.73, 439.12 )
+scale = Vector2( 1, 0.317246 )
+texture = ExtResource( 3 )
+
+[node name="Middle6" type="Sprite" parent="Throne/Middle"]
+position = Vector2( 338.73, 424.418 )
+scale = Vector2( 1, 0.317246 )
+texture = ExtResource( 3 )
+
+[node name="Middle7" type="Sprite" parent="Throne/Middle"]
+position = Vector2( 338.73, 410.451 )
+scale = Vector2( 1, 0.317246 )
+texture = ExtResource( 3 )
+
+[node name="Middle8" type="Sprite" parent="Throne/Middle"]
+position = Vector2( 338.73, 397.219 )
+scale = Vector2( 1, 0.317246 )
+texture = ExtResource( 3 )
+
+[node name="Middle9" type="Sprite" parent="Throne/Middle"]
+position = Vector2( 338.73, 385.458 )
+scale = Vector2( 1, 0.317246 )
+texture = ExtResource( 3 )
+
+[node name="Middle10" type="Sprite" parent="Throne/Middle"]
+position = Vector2( 337.995, 373.161 )
+scale = Vector2( 1, 0.317246 )
+texture = ExtResource( 3 )
+
+[node name="CreditsButton" type="TextureButton" parent="."]
+editor/display_folded = true
+margin_left = 393.675
+margin_top = 387.34
+margin_right = 679.675
+margin_bottom = 604.34
+grow_horizontal = 2
+grow_vertical = 2
+rect_scale = Vector2( 0.5, 0.5 )
+rect_pivot_offset = Vector2( 152.48, 123.577 )
+texture_normal = ExtResource( 4 )
+texture_hover = ExtResource( 5 )
+expand = true
+stretch_mode = 3
+
+[node name="Label" type="Label" parent="CreditsButton"]
+margin_left = 60.2565
+margin_top = 139.81
+margin_right = 235.256
+margin_bottom = 168.81
+custom_fonts/font = SubResource( 2 )
+custom_colors/font_color = Color( 0.243137, 0.258824, 0.0509804, 1 )
+text = "Credits"
+uppercase = true
+
+[node name="QuitButton" type="TextureButton" parent="."]
+editor/display_folded = true
+margin_left = -20.9092
+margin_top = 387.34
+margin_right = 265.091
+margin_bottom = 604.34
+grow_horizontal = 2
+grow_vertical = 2
+rect_scale = Vector2( -0.5, 0.5 )
+rect_pivot_offset = Vector2( 152.48, 123.577 )
+texture_normal = ExtResource( 4 )
+texture_hover = ExtResource( 5 )
+expand = true
+stretch_mode = 3
+
+[node name="Label" type="Label" parent="QuitButton"]
+margin_left = 193.836
+margin_top = 139.81
+margin_right = 368.836
+margin_bottom = 200.81
+rect_scale = Vector2( -1, 1 )
+custom_fonts/font = SubResource( 2 )
+custom_colors/font_color = Color( 0.243137, 0.258824, 0.0509804, 1 )
+text = "Quit
+"
+uppercase = true
+
+[node name="Player" type="Node2D" parent="."]
+scale = Vector2( 0.75, 0.7 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Player"]
+autoplay = "hover"
+anims/hover = SubResource( 3 )
+anims/stand = SubResource( 4 )
+
+[node name="PlayButton" type="TextureButton" parent="Player"]
+margin_left = 357.0
+margin_top = 369.0
+margin_right = 543.0
+margin_bottom = 570.0
+
+[node name="Body" type="Sprite" parent="Player"]
+editor/display_folded = true
+position = Vector2( 450.544, 464.584 )
+texture = ExtResource( 6 )
+__meta__ = {
+"_edit_ik_": true
+}
+
+[node name="LeftFoot" type="Sprite" parent="Player/Body"]
+position = Vector2( -30.0707, 76.3181 )
+texture = ExtResource( 7 )
+
+[node name="RightFoot" type="Sprite" parent="Player/Body"]
+position = Vector2( 27.9293, 76.3181 )
+texture = ExtResource( 7 )
+
+[node name="Face" type="Sprite" parent="Player/Body"]
+position = Vector2( -7.07068, -2.68188 )
+texture = ExtResource( 8 )
+
+[connection signal="mouse_entered" from="CreditsButton" to="." method="_on_CreditsButton_mouse_entered"]
+[connection signal="mouse_exited" from="CreditsButton" to="." method="_on_CreditsButton_mouse_exited"]
+[connection signal="pressed" from="CreditsButton" to="." method="_on_CreditsButton_pressed"]
+[connection signal="mouse_entered" from="QuitButton" to="." method="_on_QuitButton_mouse_entered"]
+[connection signal="mouse_exited" from="QuitButton" to="." method="_on_QuitButton_mouse_exited"]
+[connection signal="pressed" from="QuitButton" to="." method="_on_QuitButton_pressed"]
+[connection signal="animation_finished" from="Player/AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]
+[connection signal="pressed" from="Player/PlayButton" to="." method="_on_PlayButton_pressed"]
