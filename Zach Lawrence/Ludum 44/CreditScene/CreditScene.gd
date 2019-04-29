@@ -36,3 +36,8 @@ func _on_AnimationTree_animation_finished(anim_name):
 
 func _on_CoinShootingTween_tween_completed(object, key):
 	show_person()
+
+func _on_PersonTween_tween_completed(object, key):
+	yield(get_tree().create_timer(2), "timeout")
+	$PersonLeavingTween.interpolate_property(get_node(current_person), "position", get_node(current_person).position, Vector2(get_node(current_person).position.x, get_node(current_person).position.y + 700), 1, Tween.TRANS_SINE, Tween.EASE_IN_OUT)
+	$PersonLeavingTween.start()
