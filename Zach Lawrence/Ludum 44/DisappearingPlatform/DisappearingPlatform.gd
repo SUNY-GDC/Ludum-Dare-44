@@ -1,13 +1,10 @@
 extends Area2D
 
-# Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
+# In order to use this, connect the switches respective activate/deactive signals to 
+# either of these functions
 
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	pass # Replace with function body.
+func hide_platform():
+	hide()
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
+func show_platform():
+	show()

@@ -16,7 +16,6 @@ region_rect = Rect2( 64, 64, 64, 64 )
 shape = SubResource( 1 )
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
-editor/display_folded = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
 shape = SubResource( 1 )
