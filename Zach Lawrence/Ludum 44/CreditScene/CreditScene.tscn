@@ -1,22 +1,17 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://CreditScene/CreditScene.gd" type="Script" id=1]
 [ext_resource path="res://Assets/coin.png" type="Texture" id=2]
-[ext_resource path="res://Assets/bag.png" type="Texture" id=3]
-[ext_resource path="res://Assets/face.png" type="Texture" id=4]
-[ext_resource path="res://Assets/foot.png" type="Texture" id=5]
-[ext_resource path="res://CreditScene/PeoplesPictures/Tony.png" type="Texture" id=6]
-[ext_resource path="res://Fonts/Kenney Thick.ttf" type="DynamicFontData" id=7]
-[ext_resource path="res://CreditScene/PeoplesPictures/Raea.png" type="Texture" id=8]
-[ext_resource path="res://CreditScene/PeoplesPictures/ZacharyLawrence.png" type="Texture" id=9]
-[ext_resource path="res://Assets/BagPile.png" type="Texture" id=10]
+[ext_resource path="res://Assets/BagPile.png" type="Texture" id=3]
+[ext_resource path="res://Assets/bag.png" type="Texture" id=4]
+[ext_resource path="res://Assets/face.png" type="Texture" id=5]
+[ext_resource path="res://Assets/foot.png" type="Texture" id=6]
 
 [sub_resource type="ParticlesMaterial" id=1]
 emission_shape = 2
 emission_box_extents = Vector3( 2800, 1, 1 )
 flag_disable_z = true
 gravity = Vector3( 0, 140, 0 )
-angular_velocity = 0.0
 orbit_velocity = 0.0
 orbit_velocity_random = 0.0
 
@@ -25,11 +20,10 @@ emission_shape = 2
 emission_box_extents = Vector3( 2800, 1, 1 )
 flag_disable_z = true
 gravity = Vector3( 0, 160, 0 )
-angular_velocity = 0.0
 orbit_velocity = 0.0
 orbit_velocity_random = 0.0
 
-[sub_resource type="Animation" id=3]
+[sub_resource type="Animation" id=4]
 resource_name = "rotate_bag"
 tracks/0/type = "value"
 tracks/0/path = NodePath("BagBoy/bag:position")
@@ -53,7 +47,7 @@ tracks/1/keys = {
 "times": PoolRealArray( 0, 0.8 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ 0.0, 47.6909 ]
+"values": [ 0.0, 75.0 ]
 }
 tracks/2/type = "value"
 tracks/2/path = NodePath("BagBoy/face:position")
@@ -128,7 +122,8 @@ tracks/7/keys = {
 "values": [ 0.0 ]
 }
 
-[sub_resource type="Animation" id=4]
+[sub_resource type="Animation" id=3]
+resource_name = "walking_in"
 length = 2.5
 tracks/0/type = "value"
 tracks/0/path = NodePath("BagBoy/bag:position")
@@ -179,9 +174,6 @@ tracks/3/keys = {
 "values": [ Vector2( -174.047, 345.681 ), Vector2( -171.714, 337.517 ), Vector2( -132.059, 318.855 ), Vector2( -95.9017, 295.528 ), Vector2( -29.4017, 305.978 ), Vector2( 12.7036, 307.031 ), Vector2( 52.7036, 284.031 ), Vector2( 85.7036, 311.031 ), Vector2( 108.861, 324.715 ) ]
 }
 
-[sub_resource type="DynamicFont" id=5]
-font_data = ExtResource( 7 )
-
 [node name="CreditScene" type="Node2D"]
 script = ExtResource( 1 )
 
@@ -203,234 +195,61 @@ lifetime = 7.2
 process_material = SubResource( 2 )
 texture = ExtResource( 2 )
 
-[node name="CoinSprite" type="Sprite" parent="."]
-position = Vector2( 300, -70 )
-scale = Vector2( 0.5, 0.5 )
-texture = ExtResource( 2 )
-
-[node name="BagBoy" type="Node2D" parent="."]
-editor/display_folded = true
-
-[node name="bag" type="Sprite" parent="BagBoy"]
-position = Vector2( 173.755, 242.987 )
-texture = ExtResource( 3 )
-
-[node name="face" type="Sprite" parent="BagBoy"]
-position = Vector2( 157.301, 232.346 )
-texture = ExtResource( 4 )
-
-[node name="foot" type="Sprite" parent="BagBoy"]
-position = Vector2( 214.189, 319.003 )
-texture = ExtResource( 5 )
-
-[node name="foot2" type="Sprite" parent="BagBoy"]
-position = Vector2( 110.861, 321.715 )
-texture = ExtResource( 5 )
-
-[node name="AnimationTree" type="AnimationPlayer" parent="."]
-anims/rotate_bag = SubResource( 3 )
-anims/walking_in = SubResource( 4 )
-
-[node name="CoinShootingTween" type="Tween" parent="."]
-
-[node name="PersonTween" type="Tween" parent="."]
-
-[node name="Tony" type="Sprite" parent="."]
-editor/display_folded = true
-position = Vector2( 412.515, -300 )
-scale = Vector2( 1.7, 1.7 )
-texture = ExtResource( 2 )
-
-[node name="Sprite" type="Sprite" parent="Tony"]
-position = Vector2( -6.052, 0 )
-rotation = 3.14159
-scale = Vector2( 0.1, 0.085 )
-texture = ExtResource( 6 )
-
-[node name="Label" type="Label" parent="Tony"]
-margin_left = 94.1177
-margin_top = -43.3437
-margin_right = 179.118
-margin_bottom = -12.3437
-custom_fonts/font = SubResource( 5 )
-text = "Antonio Matos
-
--Programming
--SFX
-"
-
-[node name="Raea" type="Sprite" parent="."]
-editor/display_folded = true
-position = Vector2( 412.515, -300 )
-scale = Vector2( 1.7, 1.7 )
-texture = ExtResource( 2 )
-
-[node name="Sprite" type="Sprite" parent="Raea"]
-position = Vector2( -17.1975, -9.28784 )
-scale = Vector2( 0.07, 0.075 )
-texture = ExtResource( 8 )
-
-[node name="Label" type="Label" parent="Raea"]
-margin_left = 94.1177
-margin_top = -43.3437
-margin_right = 372.118
-margin_bottom = 17.6563
-custom_fonts/font = SubResource( 5 )
-text = "Raea Adams
-
--Programming
-"
-
-[node name="ZacharyLawrence" type="Sprite" parent="."]
-editor/display_folded = true
-position = Vector2( 412.515, -300 )
-scale = Vector2( 1.7, 1.7 )
-texture = ExtResource( 2 )
-
-[node name="Sprite" type="Sprite" parent="ZacharyLawrence"]
-position = Vector2( 11.9047, 9.28802 )
-scale = Vector2( 0.3, 0.3 )
-texture = ExtResource( 9 )
-
-[node name="Label" type="Label" parent="ZacharyLawrence"]
-margin_left = 94.1177
-margin_top = -43.3437
-margin_right = 372.118
-margin_bottom = 17.6563
-custom_fonts/font = SubResource( 5 )
-text = "Zachary Lawrence
-
--Programming
-"
-
-[node name="Chris" type="Sprite" parent="."]
-editor/display_folded = true
-position = Vector2( 412.515, -300 )
-scale = Vector2( 1.7, 1.7 )
-texture = ExtResource( 2 )
-
-[node name="Sprite" type="Sprite" parent="Chris"]
-position = Vector2( 11.9047, 9.28802 )
-scale = Vector2( 0.3, 0.3 )
-texture = ExtResource( 9 )
-
-[node name="Label" type="Label" parent="Chris"]
-margin_left = 94.1177
-margin_top = -43.3437
-margin_right = 372.118
-margin_bottom = 17.6563
-custom_fonts/font = SubResource( 5 )
-text = "Chris Hardy
-
--Programming
--SFX"
-
-[node name="Dylan" type="Sprite" parent="."]
-editor/display_folded = true
-position = Vector2( 412.515, -300 )
-scale = Vector2( 1.7, 1.7 )
-texture = ExtResource( 2 )
-
-[node name="Sprite" type="Sprite" parent="Dylan"]
-position = Vector2( 11.9047, 9.28802 )
-scale = Vector2( 0.3, 0.3 )
-texture = ExtResource( 9 )
-
-[node name="Label" type="Label" parent="Dylan"]
-margin_left = 94.1177
-margin_top = -43.3437
-margin_right = 372.118
-margin_bottom = 17.6563
-custom_fonts/font = SubResource( 5 )
-text = "Dylan Something
-
--Art
-"
-
-[node name="ZachSamalot" type="Sprite" parent="."]
-editor/display_folded = true
-position = Vector2( 412.515, -300 )
-scale = Vector2( 1.7, 1.7 )
-texture = ExtResource( 2 )
-
-[node name="Sprite" type="Sprite" parent="ZachSamalot"]
-position = Vector2( 11.9047, 9.28802 )
-scale = Vector2( 0.3, 0.3 )
-texture = ExtResource( 9 )
-
-[node name="Label" type="Label" parent="ZachSamalot"]
-margin_left = 94.1177
-margin_top = -43.3437
-margin_right = 372.118
-margin_bottom = 17.6563
-custom_fonts/font = SubResource( 5 )
-text = "Zach Samalot
-
--Programming
--Art
-
-"
-
-[node name="Paul" type="Sprite" parent="."]
-editor/display_folded = true
-position = Vector2( 412.515, -300 )
-scale = Vector2( 1.7, 1.7 )
-texture = ExtResource( 2 )
-
-[node name="Sprite" type="Sprite" parent="Paul"]
-position = Vector2( 11.9047, 9.28802 )
-scale = Vector2( 0.3, 0.3 )
-texture = ExtResource( 9 )
-
-[node name="Label" type="Label" parent="Paul"]
-margin_left = 94.1177
-margin_top = -43.3437
-margin_right = 372.118
-margin_bottom = 17.6563
-custom_fonts/font = SubResource( 5 )
-text = "Paul Riggio
-
--Music
-"
-
-[node name="PersonLeavingTween" type="Tween" parent="."]
-
 [node name="BagPile" type="Node2D" parent="."]
 editor/display_folded = true
 
 [node name="BagPile4" type="Sprite" parent="BagPile"]
 position = Vector2( 75.7098, 455.493 )
-texture = ExtResource( 10 )
+texture = ExtResource( 3 )
 
 [node name="bag4" type="Sprite" parent="BagPile"]
 position = Vector2( 995.485, 462.696 )
-texture = ExtResource( 3 )
+texture = ExtResource( 4 )
 
 [node name="BagPile" type="Sprite" parent="BagPile"]
 position = Vector2( 242.345, 517.609 )
-texture = ExtResource( 10 )
+texture = ExtResource( 3 )
 
 [node name="BagPile2" type="Sprite" parent="BagPile"]
 position = Vector2( 456.573, 519.56 )
-texture = ExtResource( 10 )
+texture = ExtResource( 3 )
 
 [node name="bag" type="Sprite" parent="BagPile"]
 position = Vector2( 636.211, 528.606 )
-texture = ExtResource( 3 )
+texture = ExtResource( 4 )
 
 [node name="bag2" type="Sprite" parent="BagPile"]
 position = Vector2( 762.862, 554.453 )
-texture = ExtResource( 3 )
+texture = ExtResource( 4 )
 
 [node name="BagPile3" type="Sprite" parent="BagPile"]
 position = Vector2( 908.898, 537.653 )
-texture = ExtResource( 10 )
+texture = ExtResource( 3 )
 
 [node name="bag3" type="Sprite" parent="BagPile"]
 position = Vector2( 30.2783, 535.246 )
-texture = ExtResource( 3 )
+texture = ExtResource( 4 )
 
+[node name="BagBoy" type="Node2D" parent="."]
+editor/display_folded = true
+
+[node name="bag" type="Sprite" parent="BagBoy"]
+position = Vector2( 143.755, 239.987 )
+texture = ExtResource( 4 )
+
+[node name="face" type="Sprite" parent="BagBoy"]
+position = Vector2( 156.301, 238.346 )
+texture = ExtResource( 5 )
+
+[node name="foot" type="Sprite" parent="BagBoy"]
+position = Vector2( 204.189, 321.003 )
+texture = ExtResource( 6 )
+
+[node name="foot2" type="Sprite" parent="BagBoy"]
+position = Vector2( 108.861, 324.715 )
+texture = ExtResource( 6 )
+
+[node name="AnimationTree" type="AnimationPlayer" parent="."]
+anims/rotate_bag = SubResource( 4 )
+anims/walking_in = SubResource( 3 )
 [connection signal="animation_finished" from="AnimationTree" to="." method="_on_AnimationTree_animation_finished"]
-[connection signal="tween_completed" from="CoinShootingTween" to="." method="_on_CoinShootingTween_tween_completed"]
-[connection signal="tween_completed" from="PersonTween" to="." method="_on_PersonTween_tween_completed"]
-[connection signal="tween_completed" from="PersonLeavingTween" to="." method="_on_PersonLeavingTween_tween_completed"]
